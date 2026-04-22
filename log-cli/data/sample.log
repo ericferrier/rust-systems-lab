@@ -1,0 +1,7 @@
+INFO 2026-04-23 10:01:12 server started successfully
+INFO 2026-04-23 10:01:15 user login success user_id=42
+WARN 2026-04-23 10:02:01 high memory usage detected
+ERROR 2026-04-23 10:02:10 database connection failed
+INFO 2026-04-23 10:02:15 retrying database connection
+ERROR 2026-04-23 10:02:20 database connection timeout
+DEBUG 2026-04-23 10:02:25 retry loop entered

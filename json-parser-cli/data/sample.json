@@ -1,0 +1,12 @@
+{
+  "app": "rust-playground",
+  "version": "1.0.0",
+  "active": true,
+  "users": 1240,
+  "errors": 3,
+  "services": {
+    "auth": "ok",
+    "db": "degraded",
+    "cache": "ok"
+  }
+}

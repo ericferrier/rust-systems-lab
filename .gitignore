@@ -1,0 +1,10 @@
+words-cli/target/
+calculator-cli/target/
+counter-cli/target/
+directory-tree/target/
+files-organizer/target/
+http-request-cli/target/
+json-parser-cli/target/
+line-counter/target/
+log-cli/target/
+palindrone-cli/target/
