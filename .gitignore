@@ -9,3 +9,8 @@ line-counter/target/
 log-cli/target/
 palindrone-cli/target/
 mnist-bayes-cli/target/
+mnist-bayes-cli/data/mnist_test.csv
+mnist-bayes-cli/data/mnist_train.csv
+mnist-cnn/target/
+mnist-cnn/data/mnist_test.csv
+mnist-cnn/data/mnist_train.csv

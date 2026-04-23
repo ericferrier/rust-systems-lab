@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "word-analyzer"
+name = "palindrone-checker"
 version = "0.1.0"

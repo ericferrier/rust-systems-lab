@@ -52,6 +52,7 @@ A Rust playground for practical CLI tools and fast, build-ready refreshers.
 - [ ]  GNB and Logistic Regression
 - [ ]  KNN Classifier
 - [ ]  K-Means Clustering
+- [ ]  CNN Images classifier
 
 
 # NOTES #
