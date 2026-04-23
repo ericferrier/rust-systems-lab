@@ -8,3 +8,4 @@ json-parser-cli/target/
 line-counter/target/
 log-cli/target/
 palindrone-cli/target/
+mnist-bayes-cli/target/

@@ -47,6 +47,12 @@ A Rust playground for practical CLI tools and fast, build-ready refreshers.
 - [ ] Watermark overlay tool
 - [ ] Image histogram analyzer
 
+### Statistical Data Learning
+- [ ]  Bayesian MNIST Classifier CLI
+- [ ]  GNB and Logistic Regression
+- [ ]  KNN Classifier
+- [ ]  K-Means Clustering
+
 
 # NOTES #
 
