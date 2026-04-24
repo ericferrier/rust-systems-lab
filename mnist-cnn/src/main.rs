@@ -7,7 +7,8 @@ mod data;
 use std::env;
 
 use utils::one_hot;
-use model::LinearModel;
+mod cnn;
+use model::CNNModel;
 use train::train;
 use data::load_mnist_csv;
 
@@ -33,13 +34,12 @@ fn main() {
 
     let y_train = one_hot(&y_train_labels, num_classes);
 
-    let input_dim = x_train.shape()[1];
+    // CNN: 1 input channel, 8 output channels, 3x3 kernel, 2x2 pool
+    let mut model = CNNModel::new(1, 1, 3, 2, num_classes);
 
-    let mut model = LinearModel::new(input_dim, num_classes);
-
-    let epochs = 20;
-    let lr = 0.1;
-    let batch_size = 128;
+    let epochs = 5;
+    let lr = 0.05;
+    let batch_size = 12;
 
     println!("Training...");
     train(&mut model, &x_train, &y_train, epochs, lr, batch_size);

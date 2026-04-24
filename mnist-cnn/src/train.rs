@@ -2,10 +2,11 @@ use ndarray::{Array2, Axis};
 use rand::seq::SliceRandom;
 
 use crate::loss::{cross_entropy, softmax};
-use crate::model::LinearModel;
+use crate::model::CNNModel;
+use crate::cnn::{flatten, relu, maxpool2d};
 
 pub fn train(
-    model: &mut LinearModel,
+    model: &mut CNNModel,
     x: &Array2<f32>,
     y: &Array2<f32>,
     epochs: usize,
@@ -28,14 +29,25 @@ pub fn train(
             let x_batch = x.select(Axis(0), batch_indices);
             let y_batch = y.select(Axis(0), batch_indices);
 
-            let logits = model.forward(&x_batch);
+            // Forward pass through CNN up to flatten
+            let batch = x_batch.nrows();
+            let mut feats = Array2::zeros((batch, model.w.nrows()));
+            for i in 0..batch {
+                let img = x_batch.row(i).to_owned().to_shape((1,28,28)).unwrap().to_owned();
+                let feat = model.conv.forward(&img);
+                let feat = relu(&feat);
+                let feat = maxpool2d(&feat, 2);
+                let flat = flatten(&feat);
+                feats.row_mut(i).assign(&flat.row(0));
+            }
+
+            let logits = feats.dot(&model.w) + &model.b;
             let probs = softmax(&logits);
             let loss = cross_entropy(&probs, &y_batch);
 
             let batch_n = x_batch.nrows() as f32;
-            // Keep exactly one normalization by batch size.
             let d_logits = (&probs - &y_batch) / batch_n;
-            let d_w = x_batch.t().dot(&d_logits);
+            let d_w = feats.t().dot(&d_logits);
             let d_b = d_logits.sum_axis(Axis(0));
 
             model.w -= &(lr * &d_w);
