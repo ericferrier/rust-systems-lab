@@ -1,0 +1,12 @@
+[package]
+name = "sp500-fft-dashboard"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rustfft = "6"
+reqwest = { version = "0.12", features = ["blocking", "json"] }
+serde_json = "1"
+tui = "0.19"
+crossterm = "0.27"
+csv = "1"

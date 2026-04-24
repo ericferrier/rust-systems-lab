@@ -1,107 +1,176 @@
-# Rust Playground #
-A Rust playground for practical CLI tools and fast, build-ready refreshers.
+# 🦀 Rust Playground
 
+A collection of **practical Rust CLI tools, system utilities, and experimental data projects**.
 
-## Systems lab backlog ##
+Built  for:
 
-### Starter & Intermediate
-- [ ] Word frequency counter
-- [ ] Character counter CLI
-- [ ] Palindrome checker
-- [ ] Simple calculator CLI
-- [ ] File line counter
-- [ ] Log file analyzer
-- [ ] JSON parser CLI
-- [ ] File organizer tool
-- [ ] Directory tree viewer
-- [ ] Simple HTTP request CLI
-
-### Advanced
-- [ ] Mini port scanner (beta use only)
-- [ ] Basic encryption/decryption tool
-- [ ] System resource monitor CLI
-- [ ] Lightweight grep clone
-- [ ] Config-driven CLI framework
-
-## 🖼️ Image Processing CLI Projects
-
-### Starter & Intermediate
-
-- [ ] Image grayscale converter
-- [ ] Image format converter (PNG ↔ JPG)
-- [ ] Image resizer CLI
-- [ ] Image crop tool (center / coordinates)
-- [ ] Image rotation tool (90°, 180°, custom)
-- [ ] Image blur / sharpen filter CLI
-- [ ] Edge detection (Sobel filter)
-- [ ] Brightness / contrast adjuster
-- [ ] Batch image processor (folder input → output folder)
-- [ ] Thumbnail generator for directories
+* fast prototyping
+* systems programming practice
+* ML / signal processing experiments
+* real-world CLI tooling patterns
 
 ---
 
-### Advanced Image Processing
+# 🧪 lab-io Systems Lab Backlog
 
-- [ ] ASCII art generator from images
-- [ ] Simple image compression analyzer (size vs quality tradeoff)
-- [ ] Watermark overlay tool
-- [ ] Image histogram analyzer
+## 🟢 Starter & Intermediate CLI Tools
 
-### Statistical Data Learning
-- [ ]  Bayesian MNIST Classifier CLI
-- [ ]  GNB and Logistic Regression
-- [ ]  KNN Classifier
-- [ ]  K-Means Clustering
-- [ ]  CNN Images classifier
+* [ ] Word frequency counter
+* [ ] Character counter CLI
+* [ ] Palindrome checker
+* [ ] Simple calculator CLI
+* [ ] File line counter
+* [ ] Log file analyzer
+* [ ] JSON parser CLI
+* [ ] File organizer tool
+* [ ] Directory tree viewer
+* [ ] Simple HTTP request CLI
 
+---
 
-# NOTES #
+## 🟠 Advanced System Tools
 
+* [ ] Mini port scanner *(beta / educational use only)*
+* [ ] AES encryption / decryption tool
+* [ ] System resource monitor CLI
+* [ ] Lightweight grep clone (regex + recursive search)
+* [ ] Config-driven CLI framework
 
-##   Key Concepts Refresher ##
+---
 
-  * `String` → heap-allocated, owned data
-  * `&str` → borrowed slice (no ownership)
-  * `split_whitespace()` → returns iterator over words
-  * `Vec<&str>` → stores references, avoids copying
-  * `max_by_key()` → finds longest word by length
-  * Ownership stays with the original `String`
+# 🖼️ lab-image — Image Processing CLI Tools
 
+## 🟢 Starter & Intermediate
 
-  * `.chars()` → Unicode-safe character iteration
-  * `.filter()` → remove whitespace
-  * `.lines()` → split by line
-  * `String` ownership stays in main
-  * No extra allocations (iterator-based)
+* [ ] Grayscale image converter
+* [ ] Image format converter (PNG ↔ JPG)
+* [ ] Image resizer CLI
+* [ ] Image crop tool (center / coordinates)
+* [ ] Image rotation tool (90°, 180°, custom)
+* [ ] Blur / sharpen filter CLI
+* [ ] Edge detection (Sobel filter)
+* [ ] Brightness / contrast adjuster
+* [ ] Batch image processor (folder → output pipeline)
+* [ ] Thumbnail generator
 
-  * `.is_alphanumeric()` → ignore punctuation/spaces
-  * `.to_lowercase()` → case normalization
-  * `.rev()` → reverse iterator
-  * String transformation pipeline
-  * Ownership + new String allocation
+---
 
-  * `split_whitespace()` → simple parsing
-  * `parse::<f64>()` → string → number
-  * `match` → operator handling
-  * `Result<T, E>` → error handling
-  * Basic input validation
-    Computation happens here
-      "+" => Ok(left + right)
+## 🟠 Advanced Image Processing
 
-  * `File::open()` → open file safely
-  * `BufReader` → efficient reading (buffered)
-  * `.lines()` → iterator over lines
-  * `Result<T, E>` → propagate file errors
-  * No full file load into memory
+* [ ] ASCII art generator from images
+* [ ] Image histogram analyzer
+* [ ] Watermark overlay tool
+* [ ] Compression analysis tool (size vs quality tradeoff)
 
+---
 
-🚀 How to run
+# 🧠 lab-ml — Data & Statistical Learning CLI
+
+* [ ] Bayesian MNIST classifier CLI
+* [ ] Gaussian Naive Bayes + Logistic Regression comparison
+* [ ] KNN classifier
+* [ ] K-Means clustering tool
+* [ ] CNN from scratch (no PyTorch / Keras)
+* [ ] Peak frequency detector (FFT-based analysis)
+* [ ] S&P 500 FFT cycle analyzer (log returns)
+* [ ] Rolling FFT backtesting engine
+
+---
+
+# ⚙️ Key Concepts Refresher
+
+## 🦀 Rust fundamentals
+
+* `String` → heap-allocated owned data
+* `&str` → borrowed string slice
+* Ownership prevents data races and memory bugs
+* `Vec<T>` → dynamic heap collection
+* Iterators → zero-cost abstraction patterns
+
+---
+
+## 🔤 Text processing
+
+* `.split_whitespace()` → word tokenization
+* `.chars()` → Unicode-safe iteration
+* `.lines()` → file line streaming
+* `.to_lowercase()` → normalization
+* `.filter()` → iterator filtering
+* `.max_by_key()` → selection logic
+
+---
+
+## 🧮 Error handling
+
+* `Result<T, E>` → explicit failure handling
+* `Option<T>` → optional values instead of null
+* `match` → exhaustive control flow
+
+---
+
+## 📂 File & IO
+
+* `File::open()` → safe file access
+* `BufReader` → efficient streaming reads
+* `.lines()` → iterator-based file parsing
+* Avoids loading entire file into memory
+
+---
+
+## 🧠 Data / ML utilities
+
+* Feature extraction via statistics
+* Mean / variance normalization
+* Naive Bayes assumptions (Gaussian distributions)
+* Log returns for financial time series
+* FFT for frequency domain analysis
+
+---
+
+# 🚀 Example Usage
+
+## Word counter CLI
+
 ```bash
-cd words-cli
 cargo run -- "Rust is fast and memory safe"
 ```
 
+---
 
+## File-based tools
 
+```bash
+cargo run -- input.txt
+```
 
+---
+
+## Grep clone
+
+```bash
+cargo run -- "TODO" ./src --recursive
+```
+
+---
+
+## FFT / Market analyzer
+
+```bash
+cargo run -- data/sp500.csv
+```
+
+---
+
+# 🧭 Design Philosophy
+
+This repo follows:
+
+> **small tools → real systems → composable utilities**
+
+Each project is:
+
+* independent
+* CLI-driven
+* minimal dependencies
+* production-style Rust patterns
 

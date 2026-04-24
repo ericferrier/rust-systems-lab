@@ -37,3 +37,5 @@ lab-ml/mnist-bayes-cli/data/mnist_test.csv
 lab-ml/mnist-bayes-cli/data/mnist_train.csv
 lab-ml/mnist-cnn/data/mnist_test.csv
 lab-ml/mnist-cnn/data/mnist_train.csv
+lab-ml/freq-detector/target/
+lab-ml/freq-detector/data/SP.csv
