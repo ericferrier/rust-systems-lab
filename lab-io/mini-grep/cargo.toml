@@ -1,0 +1,9 @@
+[package]
+name = "mini-grep"
+version = "0.2.0"
+edition = "2021"
+
+[dependencies]
+regex = "1"
+walkdir = "2"
+colored = "2"
