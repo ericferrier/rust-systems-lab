@@ -14,3 +14,5 @@ mnist-bayes-cli/data/mnist_train.csv
 mnist-cnn/target/
 mnist-cnn/data/mnist_test.csv
 mnist-cnn/data/mnist_train.csv
+crypto-aes-cli/target/
+tcp-checker/target/
