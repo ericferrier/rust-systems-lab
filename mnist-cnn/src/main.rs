@@ -38,8 +38,8 @@ fn main() {
     let mut model = CNNModel::new(1, 1, 3, 2, num_classes);
 
     let epochs = 5;
-    let lr = 0.05;
-    let batch_size = 12;
+    let lr = 0.1;
+    let batch_size = 8;
 
     println!("Training...");
     train(&mut model, &x_train, &y_train, epochs, lr, batch_size);
