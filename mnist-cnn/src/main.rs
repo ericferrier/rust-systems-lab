@@ -32,14 +32,17 @@ fn main() {
     let num_classes = 10;
 
     let y_train = one_hot(&y_train_labels, num_classes);
-    let _y_test = one_hot(&y_test_labels, num_classes);
 
     let input_dim = x_train.shape()[1];
 
     let mut model = LinearModel::new(input_dim, num_classes);
 
+    let epochs = 20;
+    let lr = 0.1;
+    let batch_size = 128;
+
     println!("Training...");
-    train(&mut model, &x_train, &y_train, 20, 0.1);
+    train(&mut model, &x_train, &y_train, epochs, lr, batch_size);
 
     let logits = model.forward(&x_test);
     let probs = loss::softmax(&logits);

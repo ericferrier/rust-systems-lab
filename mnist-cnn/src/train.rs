@@ -1,28 +1,51 @@
 use ndarray::{Array2, Axis};
-use crate::model::LinearModel;
-use crate::loss::{softmax, cross_entropy};
+use rand::seq::SliceRandom;
 
-pub fn train(model: &mut LinearModel, x: &Array2<f32>, y: &Array2<f32>, epochs: usize, lr: f32) {
-    let n = x.nrows() as f32;
+use crate::loss::{cross_entropy, softmax};
+use crate::model::LinearModel;
+
+pub fn train(
+    model: &mut LinearModel,
+    x: &Array2<f32>,
+    y: &Array2<f32>,
+    epochs: usize,
+    lr: f32,
+    batch_size: usize,
+) {
+    let n = x.nrows();
+    let mut rng = rand::thread_rng();
+    let mut indices: Vec<usize> = (0..n).collect();
 
     for epoch in 0..epochs {
-        let logits = model.forward(x);
-        let probs = softmax(&logits);
-        let loss = cross_entropy(&probs, y);
+        indices.shuffle(&mut rng);
 
-        // Gradient of softmax + cross-entropy combined: (probs - y) / n
-        let d_logits = (&probs - y) / n;
+        let mut epoch_loss_sum = 0.0f32;
 
-        // Gradient w.r.t. weights: X^T @ d_logits
-        let d_w = x.t().dot(&d_logits);
+        for batch_start in (0..n).step_by(batch_size) {
+            let batch_end = (batch_start + batch_size).min(n);
+            let batch_indices = &indices[batch_start..batch_end];
 
-        // Gradient w.r.t. bias: sum over samples
-        let d_b = d_logits.sum_axis(Axis(0));
+            let x_batch = x.select(Axis(0), batch_indices);
+            let y_batch = y.select(Axis(0), batch_indices);
 
-        model.w -= &(lr * &d_w);
-        model.b -= &(lr * &d_b.insert_axis(Axis(0)));
+            let logits = model.forward(&x_batch);
+            let probs = softmax(&logits);
+            let loss = cross_entropy(&probs, &y_batch);
 
-        println!("Epoch {}/{} - loss: {:.4}", epoch + 1, epochs, loss);
+            let batch_n = x_batch.nrows() as f32;
+            // Keep exactly one normalization by batch size.
+            let d_logits = (&probs - &y_batch) / batch_n;
+            let d_w = x_batch.t().dot(&d_logits);
+            let d_b = d_logits.sum_axis(Axis(0));
+
+            model.w -= &(lr * &d_w);
+            model.b -= &(lr * &d_b.insert_axis(Axis(0)));
+
+            epoch_loss_sum += loss * batch_n;
+        }
+
+        let epoch_loss = epoch_loss_sum / n as f32;
+        println!("Epoch {}/{} - loss: {:.4}", epoch + 1, epochs, epoch_loss);
     }
 }
 
