@@ -1,0 +1,1 @@
+cargo run -- input.jpg output.png 80

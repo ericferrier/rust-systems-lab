@@ -1,0 +1,1 @@
+cd lab-image/image-grayscale && cargo build --color always && cargo run -- input.jpg output.jpg
