@@ -48,3 +48,6 @@ lab-image/image-crop/target/
 lab-image/image-filter/target/
 lab-image/image-rotate/target/
 lab-image/image-edge-detect/target/
+lab-image/image-adjust/target/
+lab-image/image-batch/target/
+lab-image/thumbnail-cli/target/
