@@ -135,11 +135,3 @@ fn frame_to_ascii(frame: &ffmpeg::util::frame::Video, width: u32) -> String {
 
     to_ascii(dyn_img, width)
 }
-
-fn map_to_ascii(v: u8) -> usize {
-    let len = ASCII_CHARS.len() - 1;
-
-    let scaled = (v as f32 / 255.0) * len as f32;
-
-    len - scaled as usize
-}
