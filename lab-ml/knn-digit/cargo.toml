@@ -1,0 +1,10 @@
+[package]
+name = "knn-digits"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+rayon = "1.10"
+ndarray = "0.15"
+csv = "1.3"

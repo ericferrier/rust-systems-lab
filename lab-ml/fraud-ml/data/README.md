@@ -2,6 +2,12 @@ Data available at:
 https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 
 
+RUN 
+
+cargo run -- data.csv --eval full 
+
+
+
 🚀 WHAT YOUR SYSTEM NOW DOES
 
 With this main.rs you now have:
