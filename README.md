@@ -45,7 +45,6 @@ Built  for:
 * [ ] Grayscale image converter
 * [ ] Image format converter (PNG ↔ JPG)
 * [ ] Image resizer CLI
-
 * [ ] Image crop tool (center / coordinates)
 * [ ] Image rotation tool (90°, 180°, custom)
 * [ ] Blur / sharpen filter CLI

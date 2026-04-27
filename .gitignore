@@ -51,3 +51,7 @@ lab-image/image-edge-detect/target/
 lab-image/image-adjust/target/
 lab-image/image-batch/target/
 lab-image/thumbnail-cli/target/
+lab-image/ascii-art-video/target/
+lab-ml/fraud-ml/target/debug/
+lab-ml/fraud-ml/target/
+lab-ml/fraud-ml/data/creditcard.csv
