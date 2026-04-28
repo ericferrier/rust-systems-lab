@@ -1,6 +1,9 @@
 🔢 Digit Recognizer (Kaggle)
 This is the official competition page dataset (MNIST-style handwritten digits).
 
+https://www.kaggle.com/datasets/animatronbot/mnist-digit-recognizer/data
+
+
 On this dataset:
 KNN will be slow
 accuracy usually ~96–97%

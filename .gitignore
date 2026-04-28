@@ -55,3 +55,7 @@ lab-image/ascii-art-video/target/
 lab-ml/fraud-ml/target/debug/
 lab-ml/fraud-ml/target/
 lab-ml/fraud-ml/data/creditcard.csv
+lab-image/ascii-art-video/video.mp4
+lab-ml/kmeans-digit/target
+lab-ml/knn-digit/data/train.csv
+lab-ml/kmeans-digit/data/train.csv

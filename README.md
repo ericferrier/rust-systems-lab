@@ -58,9 +58,10 @@ Built  for:
 ## 🟠 Advanced Image Processing
 
 * [ ] ASCII art generator from images
-* [ ] Image histogram analyzer
-* [ ] Watermark overlay tool
-* [ ] Compression analysis tool (size vs quality tradeoff)
+* [ ] Duplicated images Archiver (to do)
+* [ ] Image histogram analyzer  (to do)
+* [ ] Watermark overlay tool  (to do)
+* [ ] Compression analysis tool (size vs quality tradeoff)  (to do)
 
 ---
 
@@ -68,8 +69,8 @@ Built  for:
 
 * [ ] Bayesian MNIST classifier CLI
 * [ ] Gaussian Naive Bayes + Logistic Regression comparison
-* [ ] KNN classifier
-* [ ] K-Means clustering tool
+* [ ] KNN classifier (to test)
+* [ ] K-Means clustering tool (to do)
 * [ ] CNN from scratch (no PyTorch / Keras)
 * [ ] Peak frequency detector (FFT-based analysis)
 * [ ] S&P 500 FFT cycle analyzer (log returns)
