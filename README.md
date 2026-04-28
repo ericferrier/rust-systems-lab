@@ -60,8 +60,8 @@ Built  for:
 * [ ] ASCII art generator from images
 * [ ] Duplicated images Archiver 
 * [ ] Image histogram analyzer
-* [ ] Watermark overlay tool  (to do)
-* [ ] Compression analysis tool (size vs quality tradeoff)  (to do)
+* [ ] Watermark overlay tool 
+* [ ] Compression analysis tool (size vs quality tradeoff)
 
 ---
 
@@ -77,6 +77,19 @@ Built  for:
 * [ ] Rolling FFT backtesting engine
 
 ---
+
+# 🧠 lab-solid — Design Patterns
+
+* [ ] Traits instead of interfaces
+* [ ] Generics instead of DI containers
+* [ ] Explicit wiring instead of reflection
+* [ ] Constructor injection
+
+ Rust achieves IoC through:
+    Constructor injection
+    Trait-based abstraction
+    Explicit dependency passing
+
 
 # ⚙️ Key Concepts Refresher
 
@@ -175,3 +188,20 @@ Each project is:
 * minimal dependencies
 * production-style Rust patterns
 
+
+# Performance & Library Usage
+
+This project does not utilize third-party Rust crates for machine learning operations. For more advanced models, please refer to:
+
+    XGBoost bindings: xgboost-rust, quickgrove
+    Tree-based algorithms: linfa-trees, smelt-ml, sklears-tree
+
+Performance benchmarks and runtime characteristics are specific to:
+    Hardware: Apple Mac mini (Apple Silicon M-series)
+    Memory: Unified memory architecture
+    OS: macOS (latest stable)
+
+Important Notes:
+    Not Cross-Platform Certified: Results observed on Mac mini hardware may differ on Linux, Windows, or Intel-based systems due to variations in CPU architecture, memory bandwidth, and instruction set optimizations.
+
+    Determinism Not Guaranteed: Due to potential non-deterministic behavior in tree-based algorithms (feature ordering, parallel thread scheduling, floating-point operations), results may vary between runs, systems, or when using different Rust compiler versions.
