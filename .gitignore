@@ -61,3 +61,4 @@ lab-ml/knn-digit/data/train.csv
 lab-ml/kmeans-digit/data/train.csv
 lab-ml/knn-digit/target/debug/
 lab-ml/knn-digit/target/
+lab-image/rusty-dup/target/
