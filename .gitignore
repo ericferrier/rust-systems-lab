@@ -59,3 +59,5 @@ lab-image/ascii-art-video/video.mp4
 lab-ml/kmeans-digit/target
 lab-ml/knn-digit/data/train.csv
 lab-ml/kmeans-digit/data/train.csv
+lab-ml/knn-digit/target/debug/
+lab-ml/knn-digit/target/

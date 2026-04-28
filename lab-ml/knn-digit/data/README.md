@@ -3,6 +3,8 @@ This is the official competition page dataset (MNIST-style handwritten digits).
 
 https://www.kaggle.com/datasets/animatronbot/mnist-digit-recognizer/data
 
+🚀 How to run
+cargo run
 
 On this dataset:
 KNN will be slow
