@@ -63,3 +63,4 @@ lab-ml/knn-digit/target/debug/
 lab-ml/knn-digit/target/
 lab-image/rusty-dup/target/
 lab-image/vision-histogram/target/
+lab-image/watermark-cli/target/
