@@ -1,7 +1,7 @@
 🚀 How to run
 📁 Batch watermark folder
 cargo run -- ./input_images ./output_images
-
+car
 📊 Output
 input_images/
  ├── a.jpg

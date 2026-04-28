@@ -60,8 +60,8 @@ Built  for:
 * [ ] ASCII art generator from images
 * [ ] Duplicated images Archiver 
 * [ ] Image histogram analyzer
-* [ ] Watermark overlay tool  (to do)
-* [ ] Compression analysis tool (size vs quality tradeoff)  (to do)
+* [ ] Watermark overlay tool 
+* [ ] Compression analysis tool (size vs quality tradeoff)
 
 ---
 
