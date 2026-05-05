@@ -65,3 +65,6 @@ lab-image/rusty-dup/target/
 lab-image/vision-histogram/target/
 lab-image/watermark-cli/target/
 lab-image/compress-cli/target/
+lab-solid/macro_demo/target/
+lab-solid/rust-generic-di/target/
+lab-solid/traits_demo/target/
